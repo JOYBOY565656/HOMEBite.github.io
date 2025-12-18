@@ -1,56 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homebeite - Delicious Food Delivered</title>
+    <title>Home Bite Food Truck - Beställ Mat Online</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Homebeite</h1>
-        <p>Fresh home-style bites delivered fast!</p>
+        <div class="logo">
+            <img src="https://thumbs.dreamstime.com/b/colorful-pizza-food-truck-illustration-summery-background-vibrant-vector-illustration-pizza-food-truck-featuring-397556177.jpg" alt="Home Bite Food Truck Logo">
+            <h1>Home Bite Food Truck</h1>
+        </div>
+        <p>God mat från vår food truck – nu med hemleverans!</p>
+        <button class="menu-btn" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'});">Visa Meny & Beställ</button>
     </header>
 
-    <section class="menu">
-        <h2>Our Menu</h2>
+    <section id="info">
+        <h2>Vi finns här:</h2>
+        <p>Stora Torget i Nässjö<br>
+        Öppet varje dag (utom söndag) kl. 11:00 – 21:00<br>
+        Telefon: 0720100002<br>
+        <strong>Fri hemleverans inom Nässjö vid beställning över 200 kr!</strong></p>
+    </section>
+
+    <section id="menu" class="menu">
+        <h2>Vår Meny</h2>
         <div class="items">
+            <!-- Item 1: Burger Salad Bowl -->
             <div class="item">
-                <h3>Burger</h3>
-                <p>Juicy beef burger with fries</p>
-                <span class="price">$10</span>
-                <button onclick="addToCart('Burger', 10)">Add to Cart</button>
+                <img src="https://www.eatingbirdfood.com/wp-content/uploads/2025/07/burger-bowl-process-6.jpg" alt="Stor burgersallad">
+                <h3>Burgersallad</h3>
+                <p>Stor sallad med kött, grönsaker och sås</p>
+                <span class="price">120 kr</span>
+                <div class="quantity">
+                    <button onclick="changeQuantity(this, -1)">-</button>
+                    <span>1</span>
+                    <button onclick="changeQuantity(this, 1)">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Burgersallad', 120, this)">Lägg till</button>
             </div>
+
+            <!-- Item 2: Loaded Fries / Chicken Sticks -->
             <div class="item">
-                <h3>Pizza</h3>
-                <p>Cheese pizza large</p>
-                <span class="price">$15</span>
-                <button onclick="addToCart('Pizza', 15)">Add to Cart</button>
+                <img src="https://media.istockphoto.com/id/1440573703/photo/fried-chicken-with-chips-mayonnaise-dip-served-in-basket-isolated-on-table-side-view-of.jpg?s=612x612&w=is&k=20&c=jzj3qKwu11kpnPVxzSlCm04z-J5Gj_cO1ps5kCrjJyg=" alt="Kycklingsticks med pommes">
+                <h3>Kycklingsticks & Pommes</h3>
+                <p>Kycklingsticks med pommes och majonnäs</p>
+                <span class="price">85 kr</span>
+                <div class="quantity">
+                    <button onclick="changeQuantity(this, -1)">-</button>
+                    <span>1</span>
+                    <button onclick="changeQuantity(this, 1)">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Kycklingsticks & Pommes', 85, this)">Lägg till</button>
             </div>
+
+            <!-- Item 3: Shawarma Plate -->
             <div class="item">
-                <h3>Salad</h3>
-                <p>Fresh garden salad</p>
-                <span class="price">$8</span>
-                <button onclick="addToCart('Salad', 8)">Add to Cart</button>
+                <img src="https://falasteenifoodie.com/wp-content/uploads/2024/10/Chicken-Shawarma.jpg" alt="Shawarma tallrik">
+                <h3>Shawarma Tallrik</h3>
+                <p>Shawarma med ris, grönsaker, pickles och bröd</p>
+                <span class="price">120 kr</span>
+                <div class="quantity">
+                    <button onclick="changeQuantity(this, -1)">-</button>
+                    <span>1</span>
+                    <button onclick="changeQuantity(this, 1)">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Shawarma Tallrik', 120, this)">Lägg till</button>
             </div>
-            <!-- Add more items here the same way -->
+
+            <!-- Item 4: Falafel Roll / Sandwich -->
+            <div class="item">
+                <img src="https://img.hellofresh.com/hellofresh_s3/image/68c00c5c16bacb5976e01be2-4443191d.jpeg" alt="Falafel rulle">
+                <h3>Falafel Rulle</h3>
+                <p>Falafel i bröd med grönsaker och sås</p>
+                <span class="price">75 kr</span>
+                <div class="quantity">
+                    <button onclick="changeQuantity(this, -1)">-</button>
+                    <span>1</span>
+                    <button onclick="changeQuantity(this, 1)">+</button>
+                </div>
+                <button class="add-btn" onclick="addToCart('Falafel Rulle', 75, this)">Lägg till</button>
+            </div>
+
+            <!-- Lägg till fler items här senare -->
         </div>
     </section>
 
     <section class="cart">
-        <h2>Your Cart</h2>
+        <h2>Din Kundvagn</h2>
         <ul id="cart-items"></ul>
-        <p>Total: $<span id="total">0</span></p>
+        <p>Totalt: <span id="total">0</span> kr</p>
     </section>
 
     <section class="order-form">
-        <h2>Place Your Order</h2>
+        <h2>Skicka Beställning</h2>
+        <p>Vi kontaktar dig för betalning (kontant/Swish vid leverans)</p>
         <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
-            <input type="text" name="address" placeholder="Delivery Address" required>
-            <textarea name="order" id="order-details" placeholder="Your order will appear here..." required></textarea>
-            <button type="submit">Send Order</button>
+            <input type="text" name="name" placeholder="Ditt namn" required>
+            <input type="tel" name="phone" placeholder="Telefonnummer" required>
+            <input type="text" name="address" placeholder="Leveransadress (Nässjö)" required>
+            <textarea name="order" id="order-details" placeholder="Din beställning visas här..." required></textarea>
+            <button type="submit">Skicka Beställning</button>
         </form>
     </section>
 
