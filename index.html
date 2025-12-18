@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homebeite - Delicious Food Delivered</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Homebeite</h1>
+        <p>Fresh home-style bites delivered fast!</p>
+    </header>
+
+    <section class="menu">
+        <h2>Our Menu</h2>
+        <div class="items">
+            <div class="item">
+                <h3>Burger</h3>
+                <p>Juicy beef burger with fries</p>
+                <span class="price">$10</span>
+                <button onclick="addToCart('Burger', 10)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <h3>Pizza</h3>
+                <p>Cheese pizza large</p>
+                <span class="price">$15</span>
+                <button onclick="addToCart('Pizza', 15)">Add to Cart</button>
+            </div>
+            <div class="item">
+                <h3>Salad</h3>
+                <p>Fresh garden salad</p>
+                <span class="price">$8</span>
+                <button onclick="addToCart('Salad', 8)">Add to Cart</button>
+            </div>
+            <!-- Add more items here the same way -->
+        </div>
+    </section>
+
+    <section class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total">0</span></p>
+    </section>
+
+    <section class="order-form">
+        <h2>Place Your Order</h2>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="address" placeholder="Delivery Address" required>
+            <textarea name="order" id="order-details" placeholder="Your order will appear here..." required></textarea>
+            <button type="submit">Send Order</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
