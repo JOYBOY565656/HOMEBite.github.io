@@ -3,87 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Bite Food Truck - Beställ Mat Online</title>
+    <title>Home Bite Food Truck - Beställ Online</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="https://thumbs.dreamstime.com/b/colorful-pizza-food-truck-illustration-summery-background-vibrant-vector-illustration-pizza-food-truck-featuring-397556177.jpg" alt="Home Bite Food Truck Logo">
             <h1>Home Bite Food Truck</h1>
         </div>
-        <p>God mat från vår food truck – nu med hemleverans!</p>
+        <p>God mat från Nässjö Torg – nu med hemleverans!</p>
         <button class="menu-btn" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'});">Visa Meny & Beställ</button>
     </header>
 
     <section id="info">
-        <h2>Vi finns här:</h2>
-        <p>Stora Torget i Nässjö<br>
-        Öppet varje dag (utom söndag) kl. 11:00 – 21:00<br>
+        <h2>Vi finns på Stora Torget i Nässjö</h2>
+        <p>Öppet varje dag (utom söndag) kl. 11:00 – 21:00<br>
         Telefon: 0720100002<br>
         <strong>Fri hemleverans inom Nässjö vid beställning över 200 kr!</strong></p>
     </section>
 
     <section id="menu" class="menu">
-        <h2>Vår Meny</h2>
+        <h2>Måltid</h2>
         <div class="items">
-            <!-- Item 1: Burger Salad Bowl -->
             <div class="item">
-                <img src="https://www.eatingbirdfood.com/wp-content/uploads/2025/07/burger-bowl-process-6.jpg" alt="Stor burgersallad">
-                <h3>Burgersallad</h3>
-                <p>Stor sallad med kött, grönsaker och sås</p>
-                <span class="price">120 kr</span>
-                <div class="quantity">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span>1</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                </div>
-                <button class="add-btn" onclick="addToCart('Burgersallad', 120, this)">Lägg till</button>
+                <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=814759920299601" alt="Supreme">
+                <h3>Supreme</h3>
+                <p>Kycklingbröst fylld med ost, pommes frites + cheddar- eller vitlökssås</p>
+                <span class="price">150 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Supreme', 150, this)">Lägg till</button>
             </div>
-
-            <!-- Item 2: Loaded Fries / Chicken Sticks -->
             <div class="item">
-                <img src="https://media.istockphoto.com/id/1440573703/photo/fried-chicken-with-chips-mayonnaise-dip-served-in-basket-isolated-on-table-side-view-of.jpg?s=612x612&w=is&k=20&c=jzj3qKwu11kpnPVxzSlCm04z-J5Gj_cO1ps5kCrjJyg=" alt="Kycklingsticks med pommes">
-                <h3>Kycklingsticks & Pommes</h3>
-                <p>Kycklingsticks med pommes och majonnäs</p>
+                <img src="https://media.istockphoto.com/id/603258520/photo/schnitzel-and-fried-potatoes.jpg?s=612x612&w=0&k=20&c=RXAndwtpKN2XUvV_TCkCQCfdlQ6sjJXTOiNpq7Kphs0=" alt="Krispig">
+                <h3>Krispig</h3>
+                <p>Krispig kyckling, pommes frites + cheddar- eller vitlökssås</p>
+                <span class="price">150 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Krispig', 150, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://media.istockphoto.com/id/603258520/photo/schnitzel-and-fried-potatoes.jpg?s=612x612&w=0&k=20&c=RXAndwtpKN2XUvV_TCkCQCfdlQ6sjJXTOiNpq7Kphs0=" alt="Schnitzel">
+                <h3>Schnitzel</h3>
+                <p>Krispigt kycklingbröst, pommes frites + vitlökssås</p>
+                <span class="price">150 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Schnitzel', 150, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=814759920299601" alt="Nötkött Shawarma">
+                <h3>Nötkött Shawarma</h3>
+                <p>Nötkött (oxfilé), shawarma, bröd, pommes frites, saltgurka + tahinisås</p>
+                <span class="price">150 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Nötkött Shawarma', 150, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=814759920299601" alt="Kyckling Shawarma">
+                <h3>Kyckling Shawarma</h3>
+                <p>Kyckling shawarma, bröd, pommes frites, saltgurka + vitlökssås</p>
+                <span class="price">125 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Kyckling Shawarma', 125, this)">Lägg till</button>
+            </div>
+        </div>
+
+        <h2>Rulle</h2>
+        <div class="items">
+            <div class="item">
+                <img src="https://live.staticflickr.com/65535/51249894956_8e61dea5da_b.jpg" alt="Kibbeh Shawarma">
+                <h3>Kibbeh Shawarma</h3>
+                <p>Nötkött (oxfilé), kibbeh, bröd, persilja, lök + granatäpplesirap + tahinisås</p>
+                <span class="price">90 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Kibbeh Shawarma', 90, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://www.corriecooks.com/wp-content/uploads/2023/08/beefshawarma.jpg" alt="Nötkött Shawarma">
+                <h3>Nötkött Shawarma</h3>
+                <p>Nötkött (oxfilé), bröd, persilja, lök, saltgurka + tahinisås + granatäpplesirap</p>
                 <span class="price">85 kr</span>
-                <div class="quantity">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span>1</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                </div>
-                <button class="add-btn" onclick="addToCart('Kycklingsticks & Pommes', 85, this)">Lägg till</button>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Nötkött Shawarma Rulle', 85, this)">Lägg till</button>
             </div>
-
-            <!-- Item 3: Shawarma Plate -->
             <div class="item">
-                <img src="https://falasteenifoodie.com/wp-content/uploads/2024/10/Chicken-Shawarma.jpg" alt="Shawarma tallrik">
-                <h3>Shawarma Tallrik</h3>
-                <p>Shawarma med ris, grönsaker, pickles och bröd</p>
-                <span class="price">120 kr</span>
-                <div class="quantity">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span>1</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                </div>
-                <button class="add-btn" onclick="addToCart('Shawarma Tallrik', 120, this)">Lägg till</button>
-            </div>
-
-            <!-- Item 4: Falafel Roll / Sandwich -->
-            <div class="item">
-                <img src="https://img.hellofresh.com/hellofresh_s3/image/68c00c5c16bacb5976e01be2-4443191d.jpeg" alt="Falafel rulle">
-                <h3>Falafel Rulle</h3>
-                <p>Falafel i bröd med grönsaker och sås</p>
+                <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=814759920299601" alt="Kyckling Shawarma">
+                <h3>Kyckling Shawarma</h3>
+                <p>Kycklingskivor, bröd, saltgurka + vitlök</p>
                 <span class="price">75 kr</span>
-                <div class="quantity">
-                    <button onclick="changeQuantity(this, -1)">-</button>
-                    <span>1</span>
-                    <button onclick="changeQuantity(this, 1)">+</button>
-                </div>
-                <button class="add-btn" onclick="addToCart('Falafel Rulle', 75, this)">Lägg till</button>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Kyckling Shawarma Rulle', 75, this)">Lägg till</button>
             </div>
+            <div class="item">
+                <img src="https://cdn.cleaneatingmag.com/wp-content/uploads/2021/06/Shish-Tawook_98-web.jpg" alt="Shish Taouk">
+                <h3>Shish Taouk</h3>
+                <p>Kycklingbröstbitar, bröd, pommes frites + vitlök</p>
+                <span class="price">75 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Shish Taouk', 75, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://fooddoodz.tv/assets/images/2020-05-19-Falafel-Wraps/2020-05-19-Falafel-Wraps--Hero-Image-900.jpg" alt="Falafel">
+                <h3>Falafel</h3>
+                <p>Falafel, bröd, isbergssallad, tomat, saltgurka, persilja, lök + tahinisås + granatäpplesirap</p>
+                <span class="price">60 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Falafel', 60, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://i.ytimg.com/vi/4PA4LO-_sj8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCy3U9HM7uAW0J8l-s6eCnN-Mltww" alt="Pommes frites">
+                <h3>Pommes frites</h3>
+                <p>Pommes frites, bröd + majonnäs + ketchup</p>
+                <span class="price">50 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Pommes frites', 50, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://i.ytimg.com/vi/4PA4LO-_sj8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCy3U9HM7uAW0J8l-s6eCnN-Mltww" alt="Supreme">
+                <h3>Supreme</h3>
+                <p>Kycklingrulle, pommes frites + vitlök</p>
+                <span class="price">75 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Supreme Rulle', 75, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://media.istockphoto.com/id/603258520/photo/schnitzel-and-fried-potatoes.jpg?s=612x612&w=0&k=20&c=RXAndwtpKN2XUvV_TCkCQCfdlQ6sjJXTOiNpq7Kphs0=" alt="Krispig Kyckling">
+                <h3>Krispig Kyckling</h3>
+                <p>Krispig kycklingfilé, bröd (kan välja), pommes frites, saltgurka + vitlök</p>
+                <span class="price">75 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Krispig Kyckling', 75, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://fwtx.com/downloads/35847/download/bigkat_jan_fwm_cw7.jpg?cb=17d88a2c316609c60fd4842ef6a63fa0" alt="Hamburgare">
+                <h3>Hamburgare</h3>
+                <p>100g nötkött, bröd, lök, burgare sås, tomat, isbergssallad, ost</p>
+                <span class="price">65 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Hamburgare', 65, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://zaatarandzaytoun.com/wp-content/uploads/2019/02/Screen-Shot-2019-02-08-at-11.21.59-1024x680.jpg" alt="Sujuk">
+                <h3>Sujuk</h3>
+                <p>Kryddat kött (nöt), bröd, saltgurka</p>
+                <span class="price">70 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Sujuk', 70, this)">Lägg till</button>
+            </div>
+        </div>
 
-            <!-- Lägg till fler items här senare -->
+        <h2>Pasta</h2>
+        <div class="items">
+            <div class="item">
+                <img src="https://iamhomesteader.com/wp-content/uploads/2020/07/chicken-pasta-2.jpg" alt="Kall Pasta">
+                <h3>Kall Pasta</h3>
+                <p>Champinjoner, tomater, lök, majs, paprika + majonnäs</p>
+                <span class="price">85 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Kall Pasta', 85, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://iamhomesteader.com/wp-content/uploads/2020/07/chicken-pasta-2.jpg" alt="Kyckling Pasta">
+                <h3>Kyckling Pasta</h3>
+                <p>Kycklingbitar, champinjoner, majs, paprika, parmesanost + vit sås</p>
+                <span class="price">125 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Kyckling Pasta', 125, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://iamhomesteader.com/wp-content/uploads/2020/07/chicken-pasta-2.jpg" alt="Nötkött Pasta">
+                <h3>Nötkött Pasta</h3>
+                <p>Nötköttsskivor (oxfilé), champinjoner, paprika, parmesanost + tahinisås</p>
+                <span class="price">150 kr</span>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Nötkött Pasta', 150, this)">Lägg till</button>
+            </div>
+        </div>
+
+        <h2>Saj (Manakish)</h2>
+        <div class="items">
+            <div class="item">
+                <img src="https://polyphagicabby.com/wp-content/uploads/2020/08/20200731_142803.jpeg?w=1024" alt="Za'atar">
+                <h3>Za'atar</h3>
+                <p>30 kr</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Za\'atar', 30, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://polyphagicabby.com/wp-content/uploads/2020/08/20200731_142803.jpeg?w=1024" alt="Za'atar och ost">
+                <h3>Za'atar och ost</h3>
+                <p>35 kr</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Za\'atar och ost', 35, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://static01.nyt.com/images/2023/12/04/multimedia/04hanukkahrex-pfmq/04hanukkahrex-pfmq-threeByTwoLargeAt2X.jpg" alt="Ost">
+                <h3>Ost</h3>
+                <p>30 kr</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Ost', 30, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://static01.nyt.com/images/2023/12/04/multimedia/04hanukkahrex-pfmq/04hanukkahrex-pfmq-threeByTwoLargeAt2X.jpg" alt="Muhammara och ost">
+                <h3>Muhammara och ost</h3>
+                <p>35 kr</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Muhammara och ost', 35, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://static01.nyt.com/images/2023/12/04/multimedia/04hanukkahrex-pfmq/04hanukkahrex-pfmq-threeByTwoLargeAt2X.jpg" alt="Ost och oliver">
+                <h3>Ost och oliver</h3>
+                <p>35 kr</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Ost och oliver', 35, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://static01.nyt.com/images/2023/12/04/multimedia/04hanukkahrex-pfmq/04hanukkahrex-pfmq-threeByTwoLargeAt2X.jpg" alt="Mortadella och ost">
+                <h3>Mortadella och ost</h3>
+                <p>35 kr</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Mortadella och ost', 35, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://www.thecandidcooks.com/wp-content/uploads/2022/10/dessert-nutella-pizza-feature-1024x683.jpg" alt="Nutella">
+                <h3>Nutella</h3>
+                <p>30 kr</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Nutella', 30, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://polyphagicabby.com/wp-content/uploads/2020/08/20200731_142803.jpeg?w=1024" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>40 kr</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Pizza', 40, this)">Lägg till</button>
+            </div>
+        </div>
+
+        <h2>Tillbehör</h2>
+        <div class="items">
+            <div class="item">
+                <img src="https://static01.nyt.com/images/2023/12/04/multimedia/04hanukkahrex-pfmq/04hanukkahrex-pfmq-threeByTwoLargeAt2X.jpg" alt="Sambousek Ost">
+                <h3>Sambousek Ost</h3>
+                <p>10 kr/st</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Sambousek Ost', 10, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://zaatarandzaytoun.com/wp-content/uploads/2019/02/Screen-Shot-2019-02-08-at-11.21.59-1024x680.jpg" alt="Grillad Kibbeh">
+                <h3>Grillad Kibbeh</h3>
+                <p>25 kr/st</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Grillad Kibbeh', 25, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://zaatarandzaytoun.com/wp-content/uploads/2019/02/Screen-Shot-2019-02-08-at-11.21.59-1024x680.jpg" alt="Stänger Kibbeh">
+                <h3>Stänger Kibbeh</h3>
+                <p>15 kr/st</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Stänger Kibbeh', 15, this)">Lägg till</button>
+            </div>
+            <div class="item">
+                <img src="https://i.ytimg.com/vi/4PA4LO-_sj8/hq720.jpg" alt="Pommes Frites">
+                <h3>Pommes Frites</h3>
+                <p>M 25 kr | L 35 kr | XL 50 kr</p>
+                <div class="quantity"><button onclick="changeQuantity(this, -1)">-</button><span>1</span><button onclick="changeQuantity(this, 1)">+</button></div>
+                <button class="add-btn" onclick="addToCart('Pommes Frites M', 25, this)">M</button>
+                <button class="add-btn" onclick="addToCart('Pommes Frites L', 35, this)">L</button>
+                <button class="add-btn" onclick="addToCart('Pommes Frites XL', 50, this)">XL</button>
+            </div>
         </div>
     </section>
 
